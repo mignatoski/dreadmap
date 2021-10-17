@@ -9,6 +9,7 @@ const port = 3000;
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/node_modules/leaflet/'));
+app.use(express.json());
 
 // Register Routes
 import indexRouter from './routes/index.js';

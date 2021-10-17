@@ -1,9 +1,14 @@
 import { Router } from 'express';
 const router = Router();
 
-import { index_get } from '../controllers/index_controller.js';
+import markers_api from '../../api/markers_api.js';
 
-/* GET home page. */
-router.get('/', index_get);
+/* List default markers */
+router.get('/', markers_api.get);
+
+/* List markers for a location */
+router.get('/:location', markers_api.getLocation);
+
+router.post('/:location', markers_api.setLocation);
 
 export default router;

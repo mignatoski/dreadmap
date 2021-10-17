@@ -17,6 +17,9 @@ app.use('/', indexRouter);
 import mapbuilderRouter from './routes/mapbuilder.js';
 app.use('/mapbuilder', mapbuilderRouter);
 
+// APIs
+import markersApiRouter from './routes/api/markers.js';
+app.use('/api/markers', markersApiRouter);
 
 // Launch web server
 app.listen(port, () => {

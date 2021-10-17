@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "browserify client/render_map.js -o public/bundle.js; node app.js"
+    "debug": "browserify client/render_map.cjs --s module -o public/bundle.js; node app.js"
   },
   "keywords": [
     "dread"

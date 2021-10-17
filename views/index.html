@@ -1,25 +1,31 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="/dist/leaflet.css"/>
-        <style>
+
+<head>
+    <link rel="stylesheet" href="/dist/leaflet.css" />
+    <style>
         /* #map { height: 860px; width: 1720px; } */
         #map {
-  height: 100%;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+            height: 100%;
+        }
 
-img.redicon {
-    filter: hue-rotate(120deg)
-}
-        </style>
-    </head>
-    <body>
-        <h1>Dreadmap</h1>
-        <div id="map"></div>
-        <script src="/bundle.js"></script>
-    </body>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        img.redicon {
+            filter: hue-rotate(120deg)
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dreadmap</h1>
+    <div id="map"></div>
+    <script src="/bundle.js"></script>
+    <script>module.init_map()</script>
+</body>
+
 </html>

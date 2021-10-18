@@ -10,17 +10,21 @@ const port = 3000;
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/node_modules/leaflet/'));
 app.use(express.json());
+app.set('views', './views');
+app.set('view engine', 'pug');
 
 // Register Routes
-import indexRouter from './routes/index.js';
-app.use('/', indexRouter);
-
 import mapbuilderRouter from './routes/mapbuilder.js';
 app.use('/mapbuilder', mapbuilderRouter);
+
+import indexRouter from './routes/index.js';
+app.use('/', indexRouter);
 
 // APIs
 import markersApiRouter from './routes/api/markers.js';
 app.use('/api/markers', markersApiRouter);
+
+
 
 // Launch web server
 app.listen(port, () => {

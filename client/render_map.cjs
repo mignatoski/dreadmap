@@ -13,8 +13,6 @@ function load_markers(location) {
     // Load markers from JSON
     var request = new XMLHttpRequest();
     request.open("GET", "/api/markers/" + location, true);
-
-
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
             mapMarkers = JSON.parse(request.responseText);
@@ -84,7 +82,7 @@ render_map.init_map = () => {
     map.on('click', mapOnClick);
 
     // Add points to map
-    load_markers("artaria");
+    load_markers(_location);
 }
 
 module.exports = render_map;

@@ -1,4 +1,4 @@
-import { join, dirname } from 'path';
+import { join, dirname, } from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 
@@ -12,8 +12,15 @@ api.get = function (req, res) {
 };
 
 api.getLocation = function (req, res) {
-    console.log(req.params.location);
-    res.sendFile(join(__dirname, `../data/${req.params.location}.json`));
+    var p = join(__dirname, `../data/${req.params.location}.json`);
+    console.log(p);
+    fs.access(p, fs.F_OK, (err) => {
+        if (err) {
+            res.sendStatus(204);
+            return;
+        }
+        res.sendFile(p);
+    });
 };
 
 api.setLocation = function (req, res) {

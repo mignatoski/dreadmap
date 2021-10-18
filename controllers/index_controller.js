@@ -1,8 +1,12 @@
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// index_controller.js
+var controller = {};
 
-export function index_get(req, res) {
-    res.sendFile(join(__dirname, '../views/index.html'));
+controller.index_get = (req, res) => {
+    res.render('index', {location:"artaria"})
 };
+
+controller.getLocation = (req, res) => {
+    res.render('index', {location: req.params.location})
+};
+
+export default controller

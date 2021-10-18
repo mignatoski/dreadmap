@@ -1,0 +1,22 @@
+doctype html 
+html
+    head
+        link(rel='stylesheet' href='/dist/leaflet.css')
+        link(rel='stylesheet' href='/app.css')
+        title Dreadmap // #{location}
+    body 
+        script.
+            var _location = '#{location}';
+        script(src='./bundle.js')
+        div(class="grid-container")
+            div(class="header")
+                h2 Dreadmap // #{location}
+            div(class="left")
+                input(type='button' value='save' onclick="module.save_markers(_location);")
+            div(class="middle")
+                div(id='map')
+            div(class="right") Right
+            div(class="footer")
+                p Dreadmap (c) 2021
+        script. 
+            module.init_map();
